@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>forgeVII — Embedded Systems Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b08;
+  --bg2: #0c100c;
+  --bg3: #101510;
+  --border: #1a2a1a;
+  --green: #00ff88;
+  --green-dim: #003322;
+  --green-mid: #00bb66;
+  --muted: #3a5a3a;
+  --text: #c8dcc8;
+  --red: #ff4455;
+  --yellow: #ffcc00;
+  --blue: #44aaff;
+  --mono: 'Share Tech Mono', monospace;
+  --sans: 'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ── HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,11,8,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--green);
+  text-shadow: 0 0 12px rgba(0,255,136,0.4);
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 1px;
+}
+
+nav { display: flex; gap: 24px; }
+
+nav a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--green); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,255,136,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 20%, rgba(0,255,136,0.03) 0%, transparent 60%);
+}
+
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green-mid);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.2s forwards;
+}
+
+.hero-title {
+  font-family: var(--mono);
+  font-size: clamp(32px, 6vw, 64px);
+  color: var(--green);
+  text-shadow: 0 0 40px rgba(0,255,136,0.3), 0 0 80px rgba(0,255,136,0.1);
+  letter-spacing: 8px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.4s forwards;
+}
+
+.hero-sub {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 4px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.6s forwards;
+}
+
+.hero-desc {
+  max-width: 600px;
+  font-size: 17px;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.8s forwards;
+}
+
+.badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 1s forwards;
+}
+
+.badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--bg2);
+}
+
+.badge.green { border-color: var(--green-mid); color: var(--green); }
+.badge.yellow { border-color: #665500; color: var(--yellow); }
+.badge.blue { border-color: #224466; color: var(--blue); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MAIN ── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 40px 120px;
+}
+
+section { margin-bottom: 72px; padding-top: 16px; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green-mid);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8f4e8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── PROJECT CARDS ── */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-4px);
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 3px;
+}
+
+.project-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-title {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--muted);
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg3);
+  transition: all 0.2s;
+}
+
+.btn:hover { border-color: var(--green-mid); color: var(--green); }
+.btn.video { border-color: #662222; color: #ff5566; }
+.btn.video:hover { background: #331111; border-color: #ff5566; }
+
+/* ── ABOUT ── */
+.about-text { max-width: 720px; font-size: 16px; color: var(--text); }
+.about-text p { margin-bottom: 16px; }
+.about-text strong { color: var(--green); font-family: var(--mono); font-weight: 400; }
+
+.skills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.skill {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--bg2);
+}
+
+/* ── CONTACT ── */
+.contact-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 12px 20px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  transition: all 0.2s;
+}
+
+.contact-links a:hover { border-color: var(--green-mid); color: var(--green); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 40px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  header { padding: 0 20px; }
+  nav { display: none; }
+  main { padding: 40px 20px 80px; }
+  .hero { padding: 60px 20px; }
+  .hero-title { letter-spacing: 4px; }
+  footer { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">FORGE<span>EMBEDDED SYSTEMS · DIY HARDWARE</span></div>
+  <nav>
+    <a href="#projects">PROJECTS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-tag">// PORTFOLIO</div>
+  <div class="hero-title">forgeVII</div>
+  <div class="hero-sub">HARISH CHAND</div>
+  <div class="hero-desc">
+    Building functional embedded systems and flight sim hardware from salvaged
+    and repurposed components. Firmware, USB HID, acoustics, and IR — all
+    open source.
+  </div>
+  <div class="badges">
+    <span class="badge green">STM32</span>
+    <span class="badge">ARDUINO</span>
+    <span class="badge blue">USB HID</span>
+    <span class="badge yellow">WEB SERIAL</span>
+    <span class="badge">OPEN SOURCE</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="projects">
+
+      <!-- TBAS -->
+      <div class="project-card">
+        <div class="project-thumb">[ TBAS THUMBNAIL ]</div>
+        <div class="project-body">
+          <div class="project-title">TBAS</div>
+          <div class="project-desc">Tactical Battlefield Awareness Suite — acoustic direction finding with TDOA, rolling-code IFF, and a live browser radar.</div>
+          <div class="project-tags">
+            <span class="tag">ARDUINO</span>
+            <span class="tag">TDOA</span>
+            <span class="tag">IFF</span>
+            <span class="tag">WEB SERIAL</span>
+          </div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/forgeVII/TBAS" target="_blank">GITHUB →</a>
+            <a class="btn" href="https://forgevii.github.io/TBAS/" target="_blank">DEMO →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOTAS -->
+      <div class="project-card">
+        <div class="project-thumb">[ HOTAS THUMBNAIL ]</div>
+        <div class="project-body">
+          <div class="project-title">HOTAS_JOYSTICK</div>
+          <div class="project-desc">DIY HOTAS sidestick built from furniture scrap — STM32 Blue Pill, native USB HID joystick, 4 axes, 10 buttons.</div>
+          <div class="project-tags">
+            <span class="tag">STM32</span>
+            <span class="tag">USB HID</span>
+            <span class="tag">BLUE PILL</span>
+            <span class="tag">SCRAP WOOD</span>
+          </div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/forgeVII/HOTAS_Joystick" target="_blank">GITHUB →</a>
+            <a class="btn video" href="https://youtu.be/1ls-qKi7sGk" target="_blank">DEMO ▶</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAMEPAD -->
+      <div class="project-card">
+        <div class="project-thumb">[ GAMEPAD THUMBNAIL ]</div>
+        <div class="project-body">
+          <div class="project-title">DIY-ROUGH-GAMEPAD</div>
+          <div class="project-desc">Handmade USB HID gamepad and reusable test pad — STM32F103C8T6, 6 analog axes, 12 buttons, no drivers needed.</div>
+          <div class="project-tags">
+            <span class="tag">STM32</span>
+            <span class="tag">USB HID</span>
+            <span class="tag">6-AXIS</span>
+            <span class="tag">12-BTN</span>
+          </div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/forgeVII/DIY-Rough-Gamepad" target="_blank">GITHUB →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-text">
+      <p>
+        I build embedded systems and flight sim hardware from whatever is available.
+        <strong>No 3D printer. No CNC. No fresh materials.</strong> Just workshop scrap,
+        hand tools, and microcontrollers that cost less than a cup of coffee.
+      </p>
+      <p>
+        Every project is a full cycle — <strong>design, carve, solder, code, test, document.</strong>
+        Firmware in STM32 HAL and Arduino. Interfaces that run in the browser with Web Serial.
+        All open source.
+      </p>
+    </div>
+    <div class="skills">
+      <span class="skill">C / C++</span>
+      <span class="skill">STM32 HAL</span>
+      <span class="skill">Arduino</span>
+      <span class="skill">USB HID</span>
+      <span class="skill">CubeMX</span>
+      <span class="skill">Web Serial API</span>
+      <span class="skill">Embedded Debugging</span>
+      <span class="skill">Electronics</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-links">
+      <a href="https://github.com/forgeVII" target="_blank">GITHUB →</a>
+      <a href="https://github.com/forgeVII-org" target="_blank">ORG →</a>
+      <a href="https://www.youtube.com/@" target="_blank">YOUTUBE →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  forgeVII — Harish Chand &nbsp;|&nbsp; Embedded Systems &amp; DIY Hardware &nbsp;|&nbsp;
+  <a href="https://github.com/forgeVII" style="color:var(--muted);text-decoration:none;">GITHUB →</a>
+</footer>
+
+</body>
+</html>
