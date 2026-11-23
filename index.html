@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>forgeVII — Embedded Systems &amp; DIY Hardware</title>
-<meta name="description" content="Portfolio of Harish Chand (forgeVII) — STM32 and Arduino embedded systems, USB HID devices, acoustics, and flight sim hardware. Built from scrap, documented for everyone.">
+<title>forgeVII — Systems Integration &amp; Hardware Test</title>
+<meta name="description" content="Portfolio of Harish Chand (forgeVII) — systems integration, hardware test and physical prototyping. STM32/ESP32 builds, power supplies, TDOA acoustics and flight-sim hardware, built from scrap and tested on the bench.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -394,6 +394,7 @@ h2 .accent { color: var(--green); }
 .skill-bar { height: 3px; background: var(--bg3); overflow: hidden; }
 .skill-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--green-dark), var(--green)); transition: width 1.2s ease; }
 .skill-fill.alt { background: linear-gradient(90deg, #001a2a, var(--blue)); }
+.skills-note { margin-top: 24px; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--muted); border-left: 2px solid var(--border2); padding-left: 14px; }
 
 /* ── PHILOSOPHY ── */
 .philosophy {
@@ -475,7 +476,7 @@ footer .heart { color: var(--red); }
     <div class="logo-mark">VII</div>
     <div>
       <span class="logo-name">forgeVII</span>
-      <span class="logo-sub">EMBEDDED · DIY HARDWARE</span>
+      <span class="logo-sub">SYSTEMS INTEGRATION · TEST</span>
     </div>
   </div>
   <nav>
@@ -494,9 +495,9 @@ footer .heart { color: var(--red); }
     <div class="hero-tag"><span class="bracket">[</span> PORTFOLIO — EST. 2024 <span class="bracket">]</span></div>
     <div class="hero-title">forgeVII<span>HARISH CHAND</span></div>
     <div class="hero-desc">
-      Building functional embedded systems and flight sim hardware from salvaged and
-      repurposed components. Firmware in STM32 HAL and Arduino. Interfaces that run in
-      the browser. Everything open source.
+      I integrate working hardware — power, wiring, sensors, mechanics and firmware — then
+      test it until it breaks and fix what I find. Turret, acoustics, flight-sim gear, built
+      from salvaged parts. Firmware is AI-assisted; the engineering is mine.
     </div>
     <div class="hero-actions">
       <a class="btn" href="#projects">VIEW PROJECTS</a>
@@ -504,10 +505,10 @@ footer .heart { color: var(--red); }
       <a class="btn red" href="https://www.youtube.com/channel/UCQk2GBpoJoKeHa_BqIHABgQ" target="_blank">YOUTUBE ▶</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num" data-count="3">0</div><div class="stat-label">OPEN SOURCE PROJECTS</div></div>
+      <div class="stat"><div class="stat-num" data-count="7">0</div><div class="stat-label">HARDWARE BUILDS</div></div>
+      <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">PUBLIC REPOS</div></div>
       <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-label">ANALOG AXES BUILT</div></div>
-      <div class="stat"><div class="stat-num" data-count="22">0</div><div class="stat-label">BUTTONS WIRED</div></div>
-      <div class="stat"><div class="stat-num" data-count="6">0</div><div class="stat-label">DEMO VIDEOS</div></div>
+      <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-label">DEMO VIDEOS</div></div>
     </div>
   </div>
   <div class="scroll-hint">▼ SCROLL</div>
@@ -521,6 +522,38 @@ footer .heart { color: var(--red); }
       <span class="section-num">01</span>
       <h2>PRO<span class="accent">JECTS</span></h2>
       <div class="section-line"></div>
+    </div>
+
+    <!-- LASER TURRET -->
+    <div class="project">
+      <div class="project-media">
+        <img class="img-primary" src="media/turret/turret-hero.jpg" alt="Laser turret assembly">
+        <div class="project-media-badge">NEWEST</div>
+        <div class="project-media-gallery"><span class="on"></span></div>
+      </div>
+      <div class="project-body">
+        <div class="project-index">PROJECT 004</div>
+        <div class="project-title">LASER TURRET</div>
+        <div class="project-desc">
+          <strong>Multi-input pan/tilt turret</strong> — STM32 drives two servos and a laser; a PC
+          runs vision and aiming; an ESP32 SoftAP bridge carries commands over Wi-Fi. Hand, head
+          and target tracking, gamepad control, and a 2-second link-loss watchdog that drops the
+          beam and holds position. Custom dual-rail 5 V PSU built for it.
+        </div>
+        <div class="project-tags">
+          <span class="tag hot">NEWEST</span>
+          <span class="tag">STM32</span>
+          <span class="tag">ESP32 WI-FI</span>
+          <span class="tag">SERVO</span>
+          <span class="tag">CUSTOM PSU</span>
+          <span class="tag">VISION</span>
+        </div>
+        <div class="project-links">
+          <a class="btn" href="https://github.com/forgeVII/laser_turret" target="_blank">GITHUB →</a>
+          <a class="btn ghost" href="https://github.com/forgeVII/laser_turret_psu" target="_blank">PSU →</a>
+          <a class="btn red" href="https://youtube.com/shorts/UFWoeOp6Qgk" target="_blank">DEMO ▶</a>
+        </div>
+      </div>
     </div>
 
     <!-- TBAS -->
@@ -625,6 +658,10 @@ footer .heart { color: var(--red); }
       <div class="section-line"></div>
     </div>
     <div class="video-strip">
+      <a class="video-card" href="https://youtube.com/shorts/UFWoeOp6Qgk" target="_blank">
+        <div class="thumb"><img src="https://img.youtube.com/vi/UFWoeOp6Qgk/hqdefault.jpg" alt="Laser turret short"><div class="play"></div></div>
+        <div class="meta"><div class="v-title">Laser turret — working + build</div><div class="v-proj">LASER TURRET</div></div>
+      </a>
       <a class="video-card" href="https://youtube.com/shorts/q6JsBSR2o4E" target="_blank">
         <div class="thumb"><img src="https://img.youtube.com/vi/q6JsBSR2o4E/hqdefault.jpg" alt="HOTAS gameplay"><div class="play"></div></div>
         <div class="meta"><div class="v-title">HOTAS in action</div><div class="v-proj">HOTAS_JOYSTICK</div></div>
@@ -673,63 +710,64 @@ footer .heart { color: var(--red); }
     </div>
     <div class="skills-grid">
       <div class="skill-group">
-        <div class="skill-group-title">// FIRMWARE</div>
+        <div class="skill-group-title">// INTEGRATION &amp; TEST</div>
         <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">STM32 HAL</span><span class="skill-val">95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Arduino</span><span class="skill-val">90%</span></div>
+          <div class="skill-top"><span class="skill-name">System Integration</span><span class="skill-val">PROVEN</span></div>
           <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">USB HID Protocol</span><span class="skill-val">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Interrupts &amp; Timing</span><span class="skill-val">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">// HARDWARE</div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Circuit Design</span><span class="skill-val">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill alt" data-width="85"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Soldering</span><span class="skill-val">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill alt" data-width="90"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Analog Signal Chain</span><span class="skill-val">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill alt" data-width="80"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Mechanical Assembly</span><span class="skill-val">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill alt" data-width="85"></div></div>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">// TOOLS</div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">STM32CubeIDE</span><span class="skill-val">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">CubeMX</span><span class="skill-val">88%</span></div>
+          <div class="skill-top"><span class="skill-name">Bench Diagnostics</span><span class="skill-val">PROVEN</span></div>
           <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">Web Serial API</span><span class="skill-val">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <div class="skill-top"><span class="skill-name">Fault Isolation</span><span class="skill-val">PROVEN</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-top"><span class="skill-name">ST-Link / SWD</span><span class="skill-val">85%</span></div>
+          <div class="skill-top"><span class="skill-name">Field / Flight-Sim Testing</span><span class="skill-val">PROVEN</span></div>
           <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
         </div>
       </div>
+      <div class="skill-group">
+        <div class="skill-group-title">// ELECTRICAL &amp; POWER</div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Power Supply Build</span><span class="skill-val">PROVEN</span></div>
+          <div class="skill-bar"><div class="skill-fill alt" data-width="88"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Wiring &amp; Harnesses</span><span class="skill-val">PROVEN</span></div>
+          <div class="skill-bar"><div class="skill-fill alt" data-width="85"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Lithium / BMS Safety</span><span class="skill-val">HANDS-ON</span></div>
+          <div class="skill-bar"><div class="skill-fill alt" data-width="80"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Protocol Sniffing (UART/I2C/SPI)</span><span class="skill-val">HANDS-ON</span></div>
+          <div class="skill-bar"><div class="skill-fill alt" data-width="78"></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">// TOOLS &amp; PLATFORMS</div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Logic Analyzer / PulseView</span><span class="skill-val">HANDS-ON</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">DMM / Oscilloscope</span><span class="skill-val">HANDS-ON</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">STM32 / ESP32 Integration</span><span class="skill-val">HANDS-ON</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-top"><span class="skill-name">Mission Planner / SITL</span><span class="skill-val">LEARNING</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="45"></div></div>
+        </div>
+      </div>
     </div>
+    <p class="skills-note">Firmware for these builds is AI-assisted. The skills above are the physical and test engineering — integration, bench work and field validation.</p>
   </section>
 
   <!-- ── PHILOSOPHY ── -->
@@ -743,13 +781,12 @@ footer .heart { color: var(--red); }
       <span class="quote-mark">"</span>
       <p>
         Real engineering is not about having the best tools. It's about solving problems with
-        what's available. This build proves a fully functional USB HID joystick can be built
-        from workshop scrap, leftover paint, and determination.
+        what's available — then testing the result until it fails and fixing that too.
       </p>
       <p>
-        <strong>If you have hands and a problem to solve, you already have everything you need.</strong>
+        <strong>Integrate it, probe it, break it, learn from it. That's the whole job.</strong>
       </p>
-      <div class="author">— forgeVII, building from the scrap pile</div>
+      <div class="author">— forgeVII, systems integration &amp; test</div>
     </div>
   </section>
 
@@ -776,27 +813,37 @@ footer .heart { color: var(--red); }
         <div class="c-label">YOUTUBE</div>
         <div class="c-value">@forgeVII</div>
       </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/harish-chand-forgevii" target="_blank">
+        <div class="icon">in</div>
+        <div class="c-label">LINKEDIN</div>
+        <div class="c-value">harish-chand-forgevii</div>
+      </a>
+      <a class="contact-card" href="https://www.instagram.com/forgeVII" target="_blank">
+        <div class="icon">◎</div>
+        <div class="c-label">INSTAGRAM</div>
+        <div class="c-value">@forgeVII</div>
+      </a>
     </div>
   </section>
 
 </main>
 
 <footer>
-  forgeVII — Harish Chand &nbsp;|&nbsp; <span class="heart">♥</span> built from scrap &nbsp;|&nbsp; © 2026
+  forgeVII — Harish Chand &nbsp;|&nbsp; <span class="heart">♥</span> integrated, tested, documented &nbsp;|&nbsp; © 2026
 </footer>
 
 <script>
 // ── BOOT SEQUENCE ──
 const bootLines = [
-  { t: 'forgeVII BIOS v2.6.0', c: '' },
+  { t: 'forgeVII BIOS v3.0.0', c: '' },
   { t: '> POST .................... OK', c: 'ok' },
-  { t: '> STM32 HAL library ........ OK', c: 'ok' },
-  { t: '> USB HID stack ............ OK', c: 'ok' },
+  { t: '> Power rails (MP1584/XL4015) OK', c: 'ok' },
+  { t: '> UART/I2C/SPI sniff ...... OK', c: 'ok' },
   { t: '> TDOA acoustic engine ..... OK', c: 'ok' },
-  { t: '> Rolling code IFF ......... OK', c: 'ok' },
+  { t: '> Link watchdog (2s) ....... OK', c: 'ok' },
   { t: '> Servo bus ............... OK', c: 'ok' },
-  { t: '> Browser radar ............ OK', c: 'ok' },
-  { t: '! Memory: 3 projects loaded', c: 'warn' },
+  { t: '> Bench diagnostics ........ OK', c: 'ok' },
+  { t: '! Memory: 7 builds loaded', c: 'warn' },
   { t: '> Booting interface .........', c: '' },
 ];
 const boot = document.getElementById('boot');
