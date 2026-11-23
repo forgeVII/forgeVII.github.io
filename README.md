@@ -27,7 +27,7 @@ field testing, not code authorship.
 
 | Project | Description | Links |
 |---|---|---|
-| **Laser Turret** | STM32 + 2 servos + laser, ESP32 Wi-Fi bridge, PC vision, 2 s link-loss watchdog | [Turret](https://github.com/forgeVII/laser_turret) · [PSU](https://github.com/forgeVII/laser_turret_psu) · [Demo](https://youtube.com/shorts/UFWoeOp6Qgk) |
+| **Laser Turret** | STM32 + 2 servos + laser, ESP32 Wi-Fi bridge, PC vision, 2 s link-loss watchdog | [Turret](https://github.com/forgeVII/laser_turret) · [PSU](https://github.com/forgeVII/Portable-Bench-PSU) · [Demo](https://youtube.com/shorts/UFWoeOp6Qgk) |
 | **TBAS** | Tactical Battlefield Awareness Suite — TDOA acoustics + rolling-code IFF + browser radar | [GitHub](https://github.com/forgeVII/TBAS) |
 | **HOTAS_Joystick** | DIY HOTAS sidestick from furniture scrap — STM32 USB HID | [GitHub](https://github.com/forgeVII/HOTAS_Joystick) |
 | **DIY-Rough-Gamepad** | Handmade USB HID gamepad — STM32, MPU6050, 12 buttons | [GitHub](https://github.com/forgeVII/DIY-Rough-Gamepad) |
